@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    A <input type="number" id="a" onfocusout="validaA()"><br>
+    B <input type="number" id="b" onfocusout="calcular()"><br>
+    C <label id="c">_____________</label><br>
+
+    <button id="butao" onclick="funcao()">Jogar</button>
+
+    <script>
+
+        var valida = true; 
+
+    function funcao(){
+      var A = parseFloat(document.getElementById("a").value);
+      var B = parseFloat(document.getElementById("b").value);
+      var C = parseFloat(document.getElementById("c").value);
+
+      var delta = calcularDelta(a, b, c);
+
+      if (delta > 0){
+          exibeResultado("c=" + c + "ganhou!!");
+      }
+        else {
+            exibeResultado("perdeu!")
+        }
+      }
+
+      function exibeResultado(msg){
+          document.getElementById("c").innerHTML = msg;
+      }
+
+    function calcular(){
+        var conta = Math.random() * 1000.1;
+        var res = document.getElementById("c").innerHTML = conta;
+        }  
+    
+
+    function validaA(){
+        if (a == 0){
+            valida = false;
+            console.log("Numero invalido!");
+        }
+    }
+
+    function calcularDelta(){
+        return (b * b) - 4 * a * c;
+        
+    } 
+    
+    
+    
+    
+    </script>
+
+
+    
+</body>
+</html>
