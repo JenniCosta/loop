@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    Valor 1: <input type="number" id="v1"><br>
+    Valor 2: <input type="number" id="v2"><br>
+    valor 3: <input type="number" id="v3"><br>
+    Valor 4: <input type="number" id="v4"><br>
+    Valor 5: <input type="number" id="v5"><br>
+    Valor 6: <input type="number" id="v6"><br>
+
+    <button onclick="minhaFuncao()">Gerar Médias</button>
+
+    <p id="resultado"></p>
+
+    <script>
+
+   
+
+        function minhaFuncao(){
+            var temp = [];
+            var soma = 0;
+            
+             
+             for(var i = 1; i<= 6; i++){
+             soma += parseInt(temp[i]);
+             }
+
+             var media = soma /6;
+             var Maior = Math.max.apply(null, temp[i]);
+             var menor = Math.min.apply(null, temp[i]);
+             document.getElementById("resultado").innerHTML= "A média é:" +media
+             "<br> o maior valor medido é:"+ Maior
+              "<br> menor valor é:" + menor;
+
+             
+        }
+        function getNumero(valor) {
+            return parseInt(document.getElementById("v" + valor).value);
+        }
+
+        
+    
+
+    
+    
+    
+    </script>
+</body>
+</html>
