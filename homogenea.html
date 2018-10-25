@@ -19,30 +19,37 @@
     <p id="resultado"></p>
 
     <script>
-
-   
+                
+                function getNumero(id) {
+            return parseInt(document.getElementById(id).value);
+        }
 
         function minhaFuncao(){
-            var temp = [];
+            var temp = new Array;
             var soma = 0;
+            var mede2 = 0;
+
+            // Esse for pegando os numeros de dentro do array (temp) e joga na variavel (mede2)
+            for(i=0; i<temp.length; i++){
+                mede2 += Number(temp[i]);
+            }
             
-             
+            //  Inserindo os valores dentro do array(temp)
              for(var i = 1; i<= 6; i++){
-             soma += parseInt(temp[i]);
+             var v = getNumero("v" + i);
+             var add = temp.push(v);
              }
-
-             var media = soma /6;
-             var Maior = Math.max.apply(null, temp[i]);
-             var menor = Math.min.apply(null, temp[i]);
-             document.getElementById("resultado").innerHTML= "A média é:" +media
-             "<br> o maior valor medido é:"+ Maior
-              "<br> menor valor é:" + menor;
+                // essa media esta pegando os numeros e dividindo pelo tamanho da variavel
+             var media = mede2 / temp.length;
+             var Maior = Math.max.apply(null, temp);
+             var menor = Math.min.apply(null, temp);
+             document.getElementById("resultado").innerHTML= media;
+             document.getElementById("resultado").innerHTML = Maior;
+             document.getElementById("resultado").innerHTML = menor;
 
              
         }
-        function getNumero(valor) {
-            return parseInt(document.getElementById("v" + valor).value);
-        }
+
 
         
     
